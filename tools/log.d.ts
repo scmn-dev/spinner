@@ -1,4 +1,6 @@
-export const info: string;
-export const success: string;
-export const warning: string;
-export const error: string;
+export namespace logSymbols {
+    const info: string;
+    const success: string;
+    const warning: string;
+    const error: string;
+}
