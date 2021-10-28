@@ -1,0 +1,37 @@
+{
+  "name": "@secman/spinner",
+  "version": "0.1.0",
+  "description": "simple spinner for secman cli",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scmn-dev/spinner.git"
+  },
+  "keywords": [
+    "spinner",
+    "secman"
+  ],
+  "author": "@abdfnx",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/scmn-dev/spinner/issues"
+  },
+  "homepage": "https://github.com/scmn-dev/spinner#readme",
+  "devDependencies": {
+    "process": "^0.11.10",
+    "signal-exit": "^3.0.5"
+  },
+  "dependencies": {
+    "bl": "^5.0.0",
+    "chalk": "^4.1.2",
+    "strip-ansi": "^7.0.1",
+    "wcwidth": "^1.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
