@@ -74,7 +74,7 @@ const changeToString = (to, from, name) => {
   });
 };
 
-export function mimicFunction(
+module.exports = function mimicFunction(
   to,
   from,
   { ignoreNonConfigurable = false } = {}

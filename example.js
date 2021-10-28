@@ -1,4 +1,3 @@
 // import spinner
-import { spnr as spinner } from "./main.js";
-
-const x = spinner("hi").start();
+const { spnr } = require("./main");
+const x = spnr("hi").start();

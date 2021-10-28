@@ -1,6 +1,6 @@
-import * as process from "process";
+const process = require("process");
 
-export function isUnicodeSupported() {
+module.exports.isUnicodeSupported = function isUnicodeSupported() {
   if (process.platform !== "win32") {
     return process.env.TERM !== "linux";
   }

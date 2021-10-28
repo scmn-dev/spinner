@@ -1,5 +1,5 @@
-import { isUnicodeSupported } from "./unicode";
-import chalk from "chalk";
+const { isUnicodeSupported } = require("./unicode");
+const chalk = require("chalk");
 
 const main = {
   info: chalk.blue("ℹ"),
@@ -15,4 +15,6 @@ const fallback = {
   error: chalk.red("×"),
 };
 
-export const logSymbols = isUnicodeSupported() ? main : fallback;
+const logSymbols = isUnicodeSupported() ? main : fallback;
+
+module.exports = logSymbols;

@@ -1,6 +1,6 @@
-import * as process from "process";
+const process = require("process");
 
-export function isInteractive({ stream = process.stdout } = {}) {
+module.exports.isInteractive = function isInteractive({ stream = process.stdout } = {}) {
   return Boolean(
     stream &&
       stream.isTTY &&

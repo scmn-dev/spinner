@@ -1,6 +1,4 @@
-export namespace logSymbols {
-    const info: any;
-    const success: any;
-    const warning: any;
-    const error: any;
-}
+export const info: string;
+export const success: string;
+export const warning: string;
+export const error: string;

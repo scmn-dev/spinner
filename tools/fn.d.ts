@@ -1,3 +1,4 @@
-export function mimicFunction(to: any, from: any, { ignoreNonConfigurable }?: {
+declare function _exports(to: any, from: any, { ignoreNonConfigurable }?: {
     ignoreNonConfigurable?: boolean;
 }): any;
+export = _exports;

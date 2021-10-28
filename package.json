@@ -3,9 +3,8 @@
   "version": "0.1.1",
   "description": "simple spinner for secman cli",
   "main": "main.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "npx -p typescript tsc *.js --declaration --allowJs --emitDeclarationOnly --outDir ."
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,6 @@
   "dependencies": {
     "bl": "^5.0.0",
     "chalk": "^4.1.2",
-    "strip-ansi": "^7.0.1",
     "wcwidth": "^1.0.1"
   },
   "publishConfig": {

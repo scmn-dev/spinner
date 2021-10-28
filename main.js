@@ -1,18 +1,18 @@
-import process from "process";
-import readline from "readline";
-import chalk from "chalk";
-import cliSpinners from "./lib/spinners.cjs";
-import { logSymbols } from "./tools/log";
-import { isInteractive } from "./tools/is-interactive";
-import stripAnsi from "strip-ansi";
-import wcwidth from "wcwidth";
-import { isUnicodeSupported } from "./tools/unicode";
-import { BufferListStream } from "bl";
-import { restoreCursor } from "./lib/restore-cursor";
+const process = require("process");
+const readline = require("readline");
+const chalk = require("chalk");
+const cliSpinners = require("./lib/spinners.js");
+const { logSymbols } = require("./tools/log");
+const { isInteractive } = require("./tools/is-interactive");
+const stripAnsi = require("./utils/strip-ansi");
+const wcwidth = require("wcwidth");
+const { isUnicodeSupported } = require("./tools/unicode");
+const { BufferListStream } = require("bl");
+const { restoreCursor } = require("./lib/restore-cursor");
 
 let isHidden = false;
 
-export const cliCursor = {};
+const cliCursor = {};
 
 cliCursor.show = (writableStream = process.stderr) => {
   if (!writableStream.isTTY) {
@@ -435,11 +435,11 @@ class Spinner {
   }
 }
 
-export function spnr(options) {
+module.exports.spnr = function spnr(options) {
   return new Spinner(options);
 }
 
-export async function spnrPromise(action, options) {
+module.exports.spnrPromise = async function spnrPromise(action, options) {
   const actionIsFunction = typeof action === "function";
   // eslint-disable-next-line promise/prefer-await-to-then
   const actionIsPromise = typeof action.then === "function";
