@@ -1,6 +1,6 @@
 {
   "name": "@secman/spinner",
-  "version": "0.1.2",
+  "version": "0.1.21",
   "description": "simple spinner for secman cli",
   "main": "main.js",
   "scripts": {

@@ -17,4 +17,4 @@ const fallback = {
 
 const logSymbols = isUnicodeSupported() ? main : fallback;
 
-module.exports = logSymbols;
+module.exports.logSymbols = logSymbols;
