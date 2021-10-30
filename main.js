@@ -4,7 +4,7 @@ const chalk = require("chalk");
 const cliSpinners = require("./lib/spinners.js");
 const { logSymbols } = require("./tools/log");
 const { isInteractive } = require("./tools/is-interactive");
-const stripAnsi = require("./utils/strip-ansi");
+const stripAnsi = require("./packages/strip-ansi");
 const wcwidth = require("wcwidth");
 const { isUnicodeSupported } = require("./tools/unicode");
 const { BufferListStream } = require("bl");
@@ -435,11 +435,11 @@ class Spinner {
   }
 }
 
-module.exports.spnr = function spnr(options) {
+module.exports.spinner = function spinner(options) {
   return new Spinner(options);
-}
+};
 
-module.exports.spnrPromise = async function spnrPromise(action, options) {
+module.exports.spinnerPromise = async function spinnerPromise(action, options) {
   const actionIsFunction = typeof action === "function";
   // eslint-disable-next-line promise/prefer-await-to-then
   const actionIsPromise = typeof action.then === "function";
@@ -453,13 +453,13 @@ module.exports.spnrPromise = async function spnrPromise(action, options) {
       ? options
       : { successText: undefined, failText: undefined };
 
-  const spinner = spnr(options).start();
+  const _spinner = _spinner(options).start();
 
   try {
-    const promise = actionIsFunction ? action(spinner) : action;
+    const promise = actionIsFunction ? action(_spinner) : action;
     const result = await promise;
 
-    spinner.succeed(
+    _spinner.succeed(
       successText === undefined
         ? undefined
         : typeof successText === "string"
@@ -469,7 +469,7 @@ module.exports.spnrPromise = async function spnrPromise(action, options) {
 
     return result;
   } catch (error) {
-    spinner.fail(
+    _spinner.fail(
       failText === undefined
         ? undefined
         : typeof failText === "string"
@@ -479,4 +479,4 @@ module.exports.spnrPromise = async function spnrPromise(action, options) {
 
     throw error;
   }
-}
+};

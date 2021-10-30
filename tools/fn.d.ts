@@ -1,4 +1,10 @@
-declare function _exports(to: any, from: any, { ignoreNonConfigurable }?: {
+declare function _exports(
+  to: any,
+  from: any,
+  {
+    ignoreNonConfigurable,
+  }?: {
     ignoreNonConfigurable?: boolean;
-}): any;
+  }
+): any;
 export = _exports;

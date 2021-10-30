@@ -1,3 +1,1 @@
-export function isInteractive({ stream }?: {
-    stream?: any;
-}): boolean;
+export function isInteractive({ stream }?: { stream?: any }): boolean;

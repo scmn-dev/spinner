@@ -1,5 +1,5 @@
 // import spinner
-const { spnr } = require("./main");
-const x = spnr("hi").start();
+const { spinner } = require("./main");
+const x = spinner("hi").start();
 
-x.succeed("code");
+x.succeed("secman");
