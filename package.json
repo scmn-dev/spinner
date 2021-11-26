@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "bl": "^5.0.0",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "wcwidth": "^1.0.1"
   },
   "publishConfig": {
